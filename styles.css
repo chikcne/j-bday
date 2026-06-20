@@ -61,6 +61,42 @@ body {
   line-height: 1.5;
 }
 
+/* ── Full-page background image (set per page via body class) ── */
+body.has-bg {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--sand);
+}
+
+/* Dark scrim so text stays legible over photos */
+body.has-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 16, 10, 0.55) 0%,
+    rgba(20, 16, 10, 0.35) 40%,
+    rgba(20, 16, 10, 0.6) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.has-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.bg-index { background-image: url("images/index.jpg"); }
+body.bg-about { background-image: url("images/about.jpg"); }
+body.bg-venue { background-image: url("images/venue.jpg"); }
+body.bg-activities { background-image: url("images/activities.jpg"); }
+
 /* ── Header / nav (inner pages) ── */
 .topbar {
   display: flex;
@@ -189,6 +225,27 @@ main.page p {
   border-top: 1px solid var(--line);
   padding-top: 1.2rem;
 }
+
+/* ── Text/control overrides when sitting on a photo ── */
+body.has-bg .topbar { border-bottom-color: rgba(255, 255, 255, 0.25); }
+body.has-bg .topbar a.brand { color: var(--sand); }
+body.has-bg .topbar nav a { color: rgba(255, 255, 255, 0.8); }
+body.has-bg .topbar nav a:hover,
+body.has-bg .topbar nav a[aria-current="page"] { color: #fff; }
+
+body.has-bg .hero .wordmark { color: var(--sand); text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45); }
+body.has-bg .hero .tagline { color: rgba(255, 255, 255, 0.92); }
+
+body.has-bg .btn { color: var(--sand); border-color: rgba(255, 255, 255, 0.85); }
+body.has-bg .btn:hover { background: var(--sand); color: var(--ink); }
+
+body.has-bg main.page h1 { color: var(--sand); text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4); }
+body.has-bg main.page .lead { color: rgba(255, 255, 255, 0.92); }
+body.has-bg main.page p { color: rgba(255, 255, 255, 0.88); }
+body.has-bg .placeholder-note { color: #ffd9b0; border-top-color: rgba(255, 255, 255, 0.25); }
+
+body.has-bg footer { color: rgba(255, 255, 255, 0.8); }
+body.has-bg .back-link { color: #ffd9b0; }
 
 /* ── Footer ── */
 footer {
