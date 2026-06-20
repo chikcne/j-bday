@@ -216,6 +216,35 @@ main.page p {
   margin-bottom: 1.1rem;
 }
 
+.map-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.8rem 0 0.5rem;
+}
+
+.map-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 300;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.map-link img {
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.map-link:hover {
+  transform: translateY(-3px);
+}
+
 .placeholder-note {
   display: inline-block;
   margin-top: 1.5rem;
