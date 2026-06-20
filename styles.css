@@ -261,3 +261,13 @@ footer {
   text-decoration: none;
 }
 .back-link:hover { text-decoration: underline; }
+
+.disclaimer {
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.65;
+  padding: 1.25rem;
+}
+body.has-bg .disclaimer { color: rgba(255, 255, 255, 0.75); }
