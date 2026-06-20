@@ -50,7 +50,7 @@ html {
 }
 
 body {
-  font-family: "than", Georgia, "Times New Roman", serif;
+  font-family: Georgia, "Times New Roman", serif;
   background: var(--sand);
   background-image:
     radial-gradient(120% 90% at 50% -10%, var(--sand) 40%, var(--sand-deep) 100%);
