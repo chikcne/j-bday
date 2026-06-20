@@ -1,12 +1,16 @@
-# Jurl30fruit — copy draft
+# Jurl30fruit — copy draft (round 2)
 
 How to use this doc: just edit the text under each **WRITE HERE** label. Don't worry about formatting, length, or anything technical — write it the way you'd want it to read on the page. Leave the labels alone. When you're done, hand it back and the text gets dropped into the site.
 
 A few notes:
 
-- Lines marked *(current)* show what's on the site right now — overwrite or keep.  
-- The three content pages (About, Venue, Activities) are still placeholders, so those are the ones that really need writing.  
+- Lines marked *(current)* now show what's **live on the site** as of this round — your last edits are in. Overwrite to change, or leave blank to keep.
+- Last round's placeholders are gone — every page now has real copy. This round is for polish.
 - Emoji and casual tone are welcome — this is a birthday site.
+
+### 👀 Read me first — one thing I changed
+
+- **Instagram handle.** You wrote the handle as **@churcheslovesu**, but the link you gave points to **instagram.com/churchlovesu** (no "es"). I went with **@churchlovesu** so the displayed handle matches where the link actually goes. If the handle really is *churcheslovesu*, give me the correct link and I'll fix both. WRITE HERE (correct handle + link, if needed):
 
 ---
 
@@ -22,23 +26,21 @@ A few notes:
 
 **Page heading** *(current)* About WRITE HERE:
 
-**Intro line** — the bold lead sentence *(current)* What this gathering is, and why we're all here. WRITE HERE: On the 25th of July,  
-30 hours of partying for our favourite baddie, Jurleo’s 30th\!  
-\[STYLING NOTE: It should be two lines, and the first line should be enlarged\]
+**Intro line** — the bold lead, shown as two lines with the first line enlarged *(current)* On the 25th of July, / 30 hours of partying for our favourite baddie — Jurleo's 30th! WRITE HERE:
 
-**Body** — the main story (one or more paragraphs) *(current — placeholder)* Placeholder copy. The story of Jurl30fruit goes here. WRITE HERE: Friends will be getting together to have fun, filling out the party with various things to do, food to eat, and music to dance to.
+**Body** — the main story *(current)* Friends getting together to have fun, filling out the party with various things to do, food to eat, and music to dance to. WRITE HERE:
 
 ---
 
-## 3\. Venue page
+## 3\. Getting there page
 
-**Page heading** *(current)* Venue WRITE HERE: Venue
+(The nav link is now labelled "getting there". The page heading itself still reads "Venue" — change below if you'd like them to match.)
 
-**Intro line** — the bold lead sentence *(current)* Where to find us, and how to get there. WRITE HERE: Located in the not-so-far away groves of Bukit Tinggi, Bentong, the Brickhouse provides  ample, comfortable space for frolicking festivities throughout the day (& night).
+**Page heading** *(current)* Venue WRITE HERE:
 
-Pool, garden, dining spaces included.
+**Intro line** — the bold lead *(current)* Located in the not-so-far-away groves of Bukit Tinggi, Bentong, the Brickhouse offers ample, comfortable space for frolicking festivities throughout the day (& night). Pool, garden, and dining spaces included. WRITE HERE:
 
-**Body** — location, map, arrival details *(current — placeholder)* Placeholder copy. Location, map, and arrival details go here. WRITE HERE: GETTING THERE: You will need to drive or carpool. There is parking space available in the venue. 
+**Body** — arrival details (the Google Maps + Waze buttons sit right below this) *(current)* Getting there: You'll need to drive or carpool. There's parking space available at the venue. WRITE HERE:
 
 ---
 
@@ -46,17 +48,17 @@ Pool, garden, dining spaces included.
 
 **Page heading** *(current)* Activities WRITE HERE:
 
-**Intro line** — the bold lead sentence *(current)* Everything to see, do, and dance to. WRITE HERE:
+**Intro line** — the bold lead *(current)* Everything to see, do, and dance to. WRITE HERE:
 
-**Body** — the programme of activities *(current — placeholder)* Placeholder copy. The programme of activities goes here. WRITE HERE: 
+**Body** — the programme of activities *(current)* WRITE HERE:
 
-- Music  
-- DJing featuring Jer Dee, one of the organisers of the Rolling Stones-featured church (@churcheslovesu on instagram \[hyperlink it to [https://www.instagram.com/churchlovesu/](https://www.instagram.com/churchlovesu/?hl=en))\] all the way from the Philippines.   
-- Yoga  
-  - Move & stretch in a different way with a yoga routine, coached by the very flexible Mika Chen (it will be his first time…)
+- Music
+- DJing featuring Jer Dee — one of the organisers of the Rolling Stones–featured church (@churchlovesu, linked), all the way from the Philippines.
+- Yoga
+  - Move & stretch in a different way with a yoga routine, coached by the very flexible Mika Chen (it'll be his first time…)
 
 ---
 
 ## Anything extra?
 
-If there's copy you think the site is missing — a welcome note, dates/times, an RSVP line, dietary/packing info, a sign-off — jot it here and we'll find a home for it. WRITE HERE:  
+If there's copy you think the site is still missing — a welcome note, exact times/end time, an RSVP line, dietary/packing info, what to bring, a sign-off — jot it here and we'll find a home for it. WRITE HERE:
