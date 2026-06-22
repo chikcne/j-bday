@@ -132,6 +132,29 @@ body.bg-activities { background-image: url("images/activities.jpg"); }
   color: var(--accent);
 }
 
+/* On narrow screens, stack the nav under the brand so nothing overflows */
+@media (max-width: 540px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 1.1rem clamp(1.25rem, 5vw, 3.5rem);
+  }
+
+  .topbar a.brand {
+    font-size: 1.3rem;
+  }
+
+  .topbar nav {
+    gap: 1.1rem;
+    font-size: 0.95rem;
+  }
+
+  .topbar nav a {
+    white-space: nowrap;
+  }
+}
+
 /* ── Home hero ── */
 .hero {
   flex: 1;
