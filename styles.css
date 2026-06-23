@@ -96,6 +96,7 @@ body.bg-index { background-image: url("images/index.jpg"); }
 body.bg-about { background-image: url("images/about.jpg"); }
 body.bg-venue { background-image: url("images/venue.jpg"); }
 body.bg-activities { background-image: url("images/activities.jpg"); }
+body.bg-rsvp { background-image: url("images/unnamed-4.jpg"); }
 
 /* ── Header / nav (inner pages) ── */
 .topbar {
@@ -146,6 +147,8 @@ body.bg-activities { background-image: url("images/activities.jpg"); }
   }
 
   .topbar nav {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
     gap: 1.1rem;
     font-size: 0.95rem;
   }
