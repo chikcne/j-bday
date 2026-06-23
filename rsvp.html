@@ -19,8 +19,161 @@
   <main class="page">
     <h1>RSVP</h1>
     <p class="lead">Let us know you're coming.</p>
-    <p class="placeholder-note">RSVP form coming soon — placeholder page.</p>
+    <p>A contribution (for food and venue costs) of <strong>RM150</strong> secures your spot. Please attach proof
+      of payment below &mdash; screenshots or PDF receipts both work.</p>
+
+    <form id="rsvp-form" class="rsvp-form" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required />
+      </div>
+
+      <fieldset class="field">
+        <legend>Will you be there?</legend>
+        <div class="radio-row">
+          <label class="radio"><input type="radio" name="attending" value="Yes" required /> <span>Yes, count me in</span></label>
+          <label class="radio"><input type="radio" name="attending" value="No" /> <span>Sadly, can't make it</span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="guests">Number of guests (including you)</label>
+        <input type="number" id="guests" name="guests" min="1" step="1" value="1" inputmode="numeric" />
+      </div>
+
+      <div class="field">
+        <label for="dietary">Dietary needs or a note <span class="optional">(optional)</span></label>
+        <textarea id="dietary" name="dietary" rows="3"></textarea>
+      </div>
+
+      <div class="pay-details" id="pay-details">
+        <h2>How to pay</h2>
+        <p>Send <strong>RM150</strong> via DuitNow, then upload your receipt below.</p>
+        <div class="pay-grid">
+          <figure class="pay-qr">
+            <!-- TODO: replace with your DuitNow QR image (e.g. images/duitnow-qr.png) -->
+            <img src="images/duitnow-qr-placeholder.png" alt="DuitNow QR code" width="180" height="180" />
+            <figcaption>Scan to pay</figcaption>
+          </figure>
+          <div class="pay-id">
+            <p class="pay-label">DuitNow ID (phone)</p>
+            <!-- TODO: replace with your real DuitNow-linked phone number -->
+            <p class="pay-number">+60 12-345 6789</p>
+            <p class="pay-name">Account name: <span>Your Name</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field" id="payment-field">
+        <label for="proof">Proof of RM150 payment</label>
+        <input type="file" id="proof" name="proof" accept="image/*,application/pdf" />
+        <p class="field-hint">Image or PDF, up to 10&nbsp;MB.</p>
+      </div>
+
+      <button type="submit" class="btn" id="submit-btn">Send RSVP</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
   </main>
-  <footer><a class="back-link" href="index.html">← back to the field</a></footer>
+  <footer><a class="back-link" href="index.html">&larr; back to the field</a></footer>
+
+  <script>
+    // Paste the deployed Google Apps Script web-app URL here (see RSVP-SETUP.md).
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycbzP0xL_0XYNfOGpQ1xFSuxM3IgTDzdZNUrUeZl9GG_rDHEoyu-EbI3LyRHDKaB0tFHDEw/exec";
+    const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10 MB
+
+    const form = document.getElementById("rsvp-form");
+    const statusEl = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+    const proofInput = document.getElementById("proof");
+    const paymentField = document.getElementById("payment-field");
+    const payDetails = document.getElementById("pay-details");
+
+    // Proof of payment is only required when actually attending.
+    function attendingValue() {
+      const checked = form.querySelector('input[name="attending"]:checked');
+      return checked ? checked.value : "";
+    }
+    function syncPaymentRequirement() {
+      const notComing = attendingValue() === "No";
+      paymentField.style.display = notComing ? "none" : "";
+      payDetails.style.display = notComing ? "none" : "";
+      proofInput.required = attendingValue() === "Yes";
+    }
+    form.querySelectorAll('input[name="attending"]').forEach(function (el) {
+      el.addEventListener("change", syncPaymentRequirement);
+    });
+    syncPaymentRequirement();
+
+    function setStatus(msg, kind) {
+      statusEl.textContent = msg;
+      statusEl.className = "form-status" + (kind ? " is-" + kind : "");
+    }
+
+    function readFileAsBase64(file) {
+      return new Promise(function (resolve, reject) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          // strip the "data:...;base64," prefix
+          const result = String(reader.result);
+          resolve(result.slice(result.indexOf(",") + 1));
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      if (ENDPOINT.indexOf("PASTE_YOUR") === 0) {
+        setStatus("Form isn't connected yet — add the Apps Script URL in rsvp.html.", "error");
+        return;
+      }
+
+      const file = proofInput.files[0];
+      if (file && file.size > MAX_FILE_BYTES) {
+        setStatus("That file is over 10 MB — please attach a smaller one.", "error");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      setStatus("Sending…", "");
+
+      try {
+        const payload = {
+          name: form.elements["name"].value.trim(),
+          attending: attendingValue(),
+          guests: form.elements["guests"].value,
+          dietary: form.elements["dietary"].value.trim(),
+          fileName: "",
+          fileType: "",
+          fileData: ""
+        };
+        if (file) {
+          payload.fileName = file.name;
+          payload.fileType = file.type || "application/octet-stream";
+          payload.fileData = await readFileAsBase64(file);
+        }
+
+        // text/plain avoids a CORS preflight; Apps Script still reads the JSON body.
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.result !== "success") throw new Error(data.error || "Unknown error");
+
+        form.reset();
+        syncPaymentRequirement();
+        setStatus("You're on the list — see you there! 🍊", "success");
+        submitBtn.textContent = "RSVP sent";
+      } catch (err) {
+        setStatus("Hmm, that didn't go through. Please try again, or message us directly.", "error");
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
