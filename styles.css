@@ -87,6 +87,16 @@ body.has-bg::before {
   pointer-events: none;
 }
 
+/* The venue photo is bright/low-contrast — darken its scrim a little more */
+body.bg-venue::before {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 16, 10, 0.68) 0%,
+    rgba(20, 16, 10, 0.52) 40%,
+    rgba(20, 16, 10, 0.72) 100%
+  );
+}
+
 body.has-bg > * {
   position: relative;
   z-index: 1;
