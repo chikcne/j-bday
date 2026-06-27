@@ -443,6 +443,18 @@ body.has-bg .stayover-note {
   border-color: #ff8e7a;
 }
 
+.info-note {
+  padding: 0.7rem 0.9rem;
+  font-weight: 300;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+}
+
+.info-note strong {
+  font-weight: 700;
+}
+
 .pay-breakdown {
   font-weight: 300;
   opacity: 0.8;
