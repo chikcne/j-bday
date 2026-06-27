@@ -20,8 +20,6 @@
     <span class="eyebrow">Save your spot</span>
     <h1>RSVP</h1>
     <p class="lead">Let us know you're coming.</p>
-    <p>A contribution (for food, drink and venue costs) of <strong>RM150 per person</strong> secures your spot. Please attach proof
-      of payment below &mdash; screenshots or PDF receipts both work.</p>
 
     <form id="rsvp-form" class="rsvp-form" novalidate>
       <div class="field">
@@ -29,12 +27,22 @@
         <input type="text" id="name" name="name" autocomplete="name" required />
       </div>
 
+      <div class="field">
+        <label for="whatsapp">Your WhatsApp contact number (for any live updates)</label>
+        <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" required />
+      </div>
+
       <fieldset class="field">
-        <legend>Will you be there?</legend>
-        <div class="radio-row">
-          <label class="radio"><input type="radio" name="attending" value="Yes" required /> <span>Yes, count me in</span></label>
-          <label class="radio"><input type="radio" name="attending" value="No" /> <span>Sadly, can't make it</span></label>
+        <legend>Which days will you be attending &amp; will you be staying over?</legend>
+        <div class="radio-col">
+          <label class="radio"><input type="radio" name="attending" value="Friday evening only (24th)" required /> <span>Friday evening only (24th)</span></label>
+          <label class="radio"><input type="radio" name="attending" value="Saturday only (25th)" /> <span>Saturday only (25th)</span></label>
+          <label class="radio"><input type="radio" name="attending" value="Both days but not staying over" /> <span>Both days but not staying over</span></label>
+          <label class="radio"><input type="radio" name="attending" value="Staying over" /> <span>Staying over</span></label>
         </div>
+        <p class="stayover-note" id="stayover-note" hidden>
+          Spaces are limited &mdash; Please message Justin at 0163012281 to confirm availability before selecting this option!
+        </p>
       </fieldset>
 
       <div class="field">
@@ -53,9 +61,13 @@
         <textarea id="dietary" name="dietary" rows="3"></textarea>
       </div>
 
+      <p id="contribution-note">A contribution (for food, drink and venue costs) secures your spot. Please attach proof
+        of payment below &mdash; screenshots or PDF receipts both work.</p>
+
       <div class="pay-details" id="pay-details">
         <h2>How to pay</h2>
-        <p>Send <strong>RM150 per person</strong> via DuitNow, then upload your receipt below.</p>
+        <p id="pay-amount-line">Select an option above to see your contribution amount.</p>
+        <p>Send it via DuitNow, then upload your receipt below.</p>
         <div class="pay-grid">
           <figure class="pay-qr">
             <!-- TODO: replace with your DuitNow QR image (e.g. images/duitnow-qr.png) -->
@@ -72,7 +84,7 @@
 
       <div class="field" id="payment-field">
         <label for="proof">Proof of payment</label>
-        <input type="file" id="proof" name="proof" accept="image/*,application/pdf" />
+        <input type="file" id="proof" name="proof" accept="image/*,application/pdf" required />
         <p class="field-hint">Image or PDF, up to 10&nbsp;MB.</p>
       </div>
 
@@ -87,31 +99,56 @@
     const ENDPOINT = "https://script.google.com/macros/s/AKfycbzP0xL_0XYNfOGpQ1xFSuxM3IgTDzdZNUrUeZl9GG_rDHEoyu-EbI3LyRHDKaB0tFHDEw/exec";
     const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10 MB
 
+    // Per-person contribution for each attendance option.
+    const PRICES = {
+      "Friday evening only (24th)": 60,
+      "Saturday only (25th)": 150,
+      "Both days but not staying over": 210,
+      "Staying over": 350
+    };
+
     const form = document.getElementById("rsvp-form");
     const statusEl = document.getElementById("form-status");
     const submitBtn = document.getElementById("submit-btn");
     const proofInput = document.getElementById("proof");
-    const paymentField = document.getElementById("payment-field");
-    const payDetails = document.getElementById("pay-details");
     const guestsInput = document.getElementById("guests");
     const guestNamesField = document.getElementById("guest-names-field");
     const guestNamesInput = document.getElementById("guest-names");
+    const stayoverNote = document.getElementById("stayover-note");
+    const payAmountLine = document.getElementById("pay-amount-line");
 
-    // Proof of payment is only required when actually attending.
     function attendingValue() {
       const checked = form.querySelector('input[name="attending"]:checked');
       return checked ? checked.value : "";
     }
+    function guestCount() {
+      return Math.max(1, Number(guestsInput.value) || 1);
+    }
+    function totalAmount() {
+      const perPerson = PRICES[attendingValue()] || 0;
+      return perPerson * guestCount();
+    }
     function syncConditionalFields() {
-      const notComing = attendingValue() === "No";
-      paymentField.style.display = notComing ? "none" : "";
-      payDetails.style.display = notComing ? "none" : "";
-      proofInput.required = attendingValue() === "Yes";
+      const option = attendingValue();
 
       // Guest names: only shown/required when bringing more than yourself.
-      const bringingOthers = !notComing && Number(guestsInput.value) > 1;
+      const bringingOthers = guestCount() > 1;
       guestNamesField.style.display = bringingOthers ? "" : "none";
       guestNamesInput.required = bringingOthers;
+
+      // Limited-space warning for the staying-over option.
+      stayoverNote.hidden = option !== "Staying over";
+
+      // Contribution amount (per-person price × number of guests).
+      const perPerson = PRICES[option] || 0;
+      if (!perPerson) {
+        payAmountLine.textContent = "Select an option above to see your contribution amount.";
+      } else if (bringingOthers) {
+        payAmountLine.innerHTML = "Your contribution: <strong>RM" + totalAmount() +
+          "</strong> <span class=\"pay-breakdown\">(RM" + perPerson + " × " + guestCount() + " guests)</span>";
+      } else {
+        payAmountLine.innerHTML = "Your contribution: <strong>RM" + totalAmount() + "</strong>";
+      }
     }
     form.querySelectorAll('input[name="attending"]').forEach(function (el) {
       el.addEventListener("change", syncConditionalFields);
@@ -158,9 +195,11 @@
       try {
         const payload = {
           name: form.elements["name"].value.trim(),
+          whatsapp: form.elements["whatsapp"].value.trim(),
           attending: attendingValue(),
           guests: form.elements["guests"].value,
           guestNames: form.elements["guestNames"].value.trim(),
+          amount: totalAmount(),
           dietary: form.elements["dietary"].value.trim(),
           fileName: "",
           fileType: "",

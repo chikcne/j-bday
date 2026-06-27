@@ -35,15 +35,17 @@ function doPost(e) {
 
     // Add a header row the first time the sheet is used.
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Timestamp", "Name", "Attending", "Guests", "Other guest names", "Dietary / Notes", "Payment proof"]);
+      sheet.appendRow(["Timestamp", "Name", "WhatsApp", "Attending", "Guests", "Other guest names", "Amount (RM)", "Dietary / Notes", "Payment proof"]);
     }
 
     sheet.appendRow([
       new Date(),
       data.name || "",
+      data.whatsapp || "",
       data.attending || "",
       data.guests || "",
       data.guestNames || "",
+      data.amount || "",
       data.dietary || "",
       fileUrl
     ]);

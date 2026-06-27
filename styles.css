@@ -391,6 +391,7 @@ main.page a.map-link:hover {
 }
 
 .rsvp-form input[type="text"],
+.rsvp-form input[type="tel"],
 .rsvp-form input[type="number"],
 .rsvp-form textarea {
   font-family: inherit;
@@ -419,6 +420,33 @@ main.page a.map-link:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem 1.5rem;
+}
+
+.rsvp-form .radio-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.stayover-note {
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  font-weight: 700;
+  background: rgba(196, 69, 47, 0.18);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+}
+.stayover-note[hidden] { display: none; }
+body.has-bg .stayover-note {
+  color: #ffd2c7;
+  background: rgba(196, 69, 47, 0.35);
+  border-color: #ff8e7a;
+}
+
+.pay-breakdown {
+  font-weight: 300;
+  opacity: 0.8;
+  white-space: nowrap;
 }
 
 .rsvp-form .radio {
