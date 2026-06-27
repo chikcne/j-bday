@@ -1,64 +1,17 @@
-# **Jurl30fruit copy draft**
+**==Index - ==**  
+  
+24th - 26th July   
+  
+**About -**  
+  
+  
+**From the 24th to the 26th of July, **  
+**30 hours of partying, celebration and fun as we gather together to celebrate our favourite baddie – Jurleo’s 30th!**  
+  
+*For Jurleo, the best birthday gifts are those shared by friends. Expect fun activities hosted by friends of Jurleo throughout the day in & around the villa. *  **For a closer look at the programme, please refer to the Programme tab.**  NOTE: Feel free to drop anytime during any of the two dates from door open.   However, if you are planning to stay the night – please RSVP your attendance AND reach out to **++Justin (hyperlink to number) ++**to confirm your accommodation as slots are limited. You can also reach out for further information regarding accommodations or if you have anymore questions (he won’t bite).  Do note that meals will only be catered on the 25th ONLY.   As we approach the big day, you will be invited to a WhatsApp channel with live updates on upcoming events and a live itinerary update throughout! 
 
-# **Jurl30fruit — copy draft (round 3\)**
+**The Programme - ++ ++** **++Day 1 - 24th July, Friday (THE CHILL NIGHT BEFORE) ++** Doors official open on the 24th of July **at 6pm for those who are opting to stay over from the first day.**  
+  
+The first night will be **more of a chill affair**. Approach the open deck with opens hearts and open minds as you get mingle with snacks and drinks provided.  **++Day 2 - 25th July, Saturday (THE MAIN EVENT – IF YOU HAD TO CHOOSE, THIS IS THE DAY YOU SHOULD COME FOR) ++** **Doors officially open FOR ALL at 11am for all! **  Lunch and dinner will be catered.   Expect activities in the morning, with even more later on during the day. There’s a pool too, so bring your skimpiest and sexiest ensemble to take a refreshing dip.  As the sun sets – painting the sky a brilliant amber, so do the animals come out to play.   Here’s all the sweet tunes you can expect to groove to:  Featuring Jer Dee — one of the organisers of the Rolling Stones–featured church (++[@churchlovesu](https://www.instagram.com/churchlovesu/)++), all the way from the Philippines.   Alongside the local Manila legend, we will also witness the debut of DJ Tofu. Expect pussy popping pop (his words, not mine) as high gloss hyperpop collides with dance floor euphoria. There will be Charli XCX, there will be sweat, there will be a 10 magnitude mothercuntquake.  As the night continues into a revel of sound and sin, we will also feature our very own birthday boy’s first ever DJ set before the cake cutting ceremony by 12am.  Finally to end the night with a sonic bang is the brilliant and versatile DJ Bustin’s sophomore appearance.  **++Day 3 - 26th July, Sunday (DANCE THROUGH THE NIGHT MY BEAUTIFULS)++** The last set will end right before 4am.  **Check out is at 12pm, so please ensure you are UP and PACKED by then.++ ++**  NOTE: Feel free to drop anytime during any of the two dates from door open.   However, if you are planning to stay the night – please RSVP your attendance AND reach out to **++Justin (hyperlink to number) ++**to confirm your accommodation as slots are limited. You can also reach out for further information regarding accommodations or if you have anymore questions (he won’t bite).  Do note that meals will only be catered on the 25th ONLY.   As we approach the big day, you will be invited to a WhatsApp channel with live updates on upcoming events and a live itinerary update throughout!  
+  
 
-How to use this doc: just edit the text under each **WRITE HERE** label. Don’t worry about formatting, length, or anything technical — write it the way you’d want it to read on the page. Leave the labels alone. When you’re done, hand it back and the text gets dropped into the site.
-
-A few notes:
-
-* Lines marked *(current)* now show what’s **live on the site** as of this round — your last edits are in. Overwrite to change, or leave blank to keep.
-
-
----
-
-## **1\. Home page**
-
-**Wordmark / event name** *(current)* Jurl30fruit WRITE HERE:
-
-**Tagline** — the one line under the name *(current)* 30 hours in a field of human expression. For one birthday. WRITE HERE:
-
----
-
-## **2\. About page**
-
-**Page heading** *(current)* About WRITE HERE:
-
-**Intro line** — the bold lead, shown as two lines with the first line enlarged *(current)* On the 25th of July, / 30 hours of partying for our favourite baddie — Jurleo’s 30th\! WRITE HERE:
-
-**Body** — the main story *(current)* For Jurleo, the best birthday gifts are those shared by friends. Activities hosted by friends of Jurleo throughout the day in & around the villa. Lunch and Dinner provided. Ample space to lounge around. WRITE HERE:
-
----
-
-## **3\. Getting there page**
-
-(The nav link is labelled “getting there”. The page heading itself still reads “Venue” — change below if you’d like them to match.)
-
-**Page heading** *(current)* Venue WRITE HERE:
-
-**Intro line** — the bold lead *(current)* Located in the not-so-far-away groves of Bukit Tinggi, Bentong, the Brickhouse offers ample, comfortable space for frolicking festivities throughout the day (& night). Pool, garden, and dining spaces included. WRITE HERE:
-
-**Body** — arrival details (the Google Maps \+ Waze buttons sit right below this) *(current)* Getting there: You’ll need to drive or carpool. There’s parking space available at the venue. Let us know if you require carpooling arrangements — just ask the person who invited you. WRITE HERE:
-
----
-
-## **4\. Activities page**
-
-**Page heading** *(current)* Activities WRITE HERE:
-
-**Intro line** — the bold lead *(current)* Everything to see, do, and dance to. WRITE HERE:
-
-**Body** — the programme of activities. Now grouped on the page into two headed sections — **Music** and **Yoga** — each with its own blurb. *(current)*
-
-* Music
-  * DJing featuring Jer Dee — one of the organisers of the Rolling Stones–featured church (@churchlovesu, linked), all the way from the Philippines.
-  * Also featuring the DJ debut of DJ Tofu and Copyrighted Music.
-* Yoga
-  * Destress in a different way with meditation guided by Mika Chen (it’ll be his first time…)
-
-WRITE HERE:
-
----
-
-## **Anything extra?**
-
-If there’s copy you think the site is still missing — a welcome note, exact times/end time, an RSVP line, dietary/packing info, what to bring, a sign-off — jot it here and we’ll find a home for it. WRITE HERE:

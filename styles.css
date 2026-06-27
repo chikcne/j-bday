@@ -105,7 +105,7 @@ body.has-bg > * {
 body.bg-index { background-image: url("images/index.png"); }
 body.bg-about { background-image: url("images/about.jpg"); }
 body.bg-venue { background-image: url("images/venue.jpg"); }
-body.bg-activities { background-image: url("images/activities.jpg"); }
+body.bg-programme { background-image: url("images/programme.jpg"); }
 body.bg-rsvp { background-image: url("images/rsvp.jpg"); }
 
 /* ── Header / nav (inner pages) ── */
@@ -292,7 +292,7 @@ main.page li {
   margin-bottom: 0.5rem;
 }
 
-/* ── Activities programme ── */
+/* ── Programme ── */
 .programme {
   margin-top: 2.6rem;
 }
@@ -311,8 +311,18 @@ main.page li {
   font-weight: 400;
   font-size: clamp(1.7rem, 4.5vw, 2.4rem);
   line-height: 1.05;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.3rem;
 }
+
+.act-sub {
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+body.has-bg .act-sub { color: #ffd9b0; }
 
 .act p {
   margin-bottom: 0.45rem;
