@@ -92,11 +92,11 @@ body.has-bg > * {
   z-index: 1;
 }
 
-body.bg-index { background-image: url("images/index.jpg"); }
+body.bg-index { background-image: url("images/index.png"); }
 body.bg-about { background-image: url("images/about.jpg"); }
 body.bg-venue { background-image: url("images/venue.jpg"); }
 body.bg-activities { background-image: url("images/activities.jpg"); }
-body.bg-rsvp { background-image: url("images/unnamed-4.jpg"); }
+body.bg-rsvp { background-image: url("images/rsvp.jpg"); }
 
 /* ── Header / nav (inner pages) ── */
 .topbar {
