@@ -47,14 +47,14 @@
       <fieldset class="field">
         <legend>Which days will you be attending &amp; will you be staying over?</legend>
         <div class="radio-col">
-          <label class="radio"><input type="radio" name="attending" value="Friday evening only (24th)" required /> <span>Friday evening only (24th)</span></label>
-          <label class="radio"><input type="radio" name="attending" value="Saturday only (25th)" /> <span>Saturday only (25th)</span></label>
+          <label class="radio"><input type="radio" name="attending" value="Friday evening only (24th)" required /> <span>Friday evening only, 24th (<strong>NOT</strong> staying over)</span></label>
+          <label class="radio"><input type="radio" name="attending" value="Saturday only (25th)" /> <span>Saturday only, 25th (<strong>NOT</strong> staying over)</span></label>
           <label class="radio"><input type="radio" name="attending" value="Both days but not staying over" /> <span>Both days but not staying over</span></label>
-          <label class="radio"><input type="radio" name="attending" value="Staying over" /> <span>Staying over</span></label>
+          <label class="radio"><input type="radio" name="attending" value="Staying over" /> <span>Staying over (both nights)</span></label>
         </div>
-        <p class="info-note"><strong>Please note:</strong><br /> A contribution (for food, drink and venue costs) secures your spot. Contribution amount differs depending on the day you choose.</p>
+        <p class="info-note"><strong>Please note:</strong><br /> A contribution (for food, drink and venue costs) secures your spot. Contribution amount differs depending on the day you choose. <br>Regardless of which option you choose, you can stay as long as you want: The options are for securing your bedding, food and drinks.</p>
         <p class="stayover-note" id="stayover-note" hidden>
-          Spaces are limited &mdash; Please message <a href="https://wa.me/60163012281" target="_blank" rel="noopener noreferrer">Justin</a> at 0163012281 to confirm availability before selecting this option!
+          Rooms are limited for staying in &mdash; Please message <a href="https://wa.me/60163012281" target="_blank" rel="noopener noreferrer">Justin</a> at 0163012281 to confirm availability before selecting this option!
         </p>
       </fieldset>
 
@@ -105,7 +105,7 @@
     const PRICES = {
       "Friday evening only (24th)": 60,
       "Saturday only (25th)": 160,
-      "Both days but not staying over": 210,
+      "Both days but not staying over": 220,
       "Staying over": 350
     };
 
