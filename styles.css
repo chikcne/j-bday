@@ -494,6 +494,14 @@ body.has-bg .stayover-note {
   font-weight: 700;
 }
 
+.info-note > :first-child {
+  margin-top: 0;
+}
+
+.info-note > :last-child {
+  margin-bottom: 0;
+}
+
 .pay-breakdown {
   font-weight: 300;
   opacity: 0.8;
